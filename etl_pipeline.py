@@ -1,10 +1,10 @@
+# etl_pipeline.py
 import pandas as pd
 
 def extract_data():
-    # Simulate extracting raw data
     return pd.DataFrame({
-        'name': ['Alice', 'Bob'],
-        'age': [25, 32]
+        'name': ['Alice', 'Bob', 'Charlie'],
+        'age': [25, 32, 29]
     })
 
 def transform_data(df: pd.DataFrame) -> pd.DataFrame:
@@ -12,7 +12,8 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
     df['age_plus_10'] = df['age'] + 10
     return df
 
-def load_data(df: pd.DataFrame):
-    # Simulate loading (e.g., to CSV)
+def load_data(df: pd.DataFrame) -> str:
+    # Simulates loading data — returns a CSV string
     return df.to_csv(index=False)
+
 
